@@ -16,43 +16,128 @@
     </v-row>
 
     <v-row>
-      <v-col md="auto" v-for="(a,i) in a " :key="i">
-        <v-skeleton-loader class="mx-auto" width="368" height="362" type="card,text,card-heading" md="auto" v-if="loading"></v-skeleton-loader>
-          <v-card class="mx-auto" max-width="344" v-else>
-            <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px"></v-img>
+      <v-col md="auto" v-for="(item,i) in animeData " :key="i">
+        <v-skeleton-loader
+          class="mx-auto"
+          width="368"
+          height="362"
+          type="card,text,card-heading"
+          md="auto"
+          v-if="loading"
+        ></v-skeleton-loader>
+        <v-card class="mx-auto" width="200" height="390" v-else>
+          <v-img :src="item.image_url" height="200px" contain ></v-img>
 
-            <v-card-title>Top western road trips</v-card-title>
+          <v-card-title class="cardTitle">{{item.title}}</v-card-title>
 
-            <v-card-subtitle>1,000 miles of wonder</v-card-subtitle>
+          <v-card-subtitle>{{item.source}}</v-card-subtitle>
 
-            <v-card-actions>
-              <v-btn text>Share</v-btn>
+          <v-card-actions>
+            <v-btn text>Share</v-btn>
 
-              <v-btn color="purple" text>Explore</v-btn>
-            </v-card-actions>
-          </v-card>
+            <v-btn color="purple" text>Explore</v-btn>
+          </v-card-actions>
+        </v-card>
       </v-col>
     </v-row>
   </v-app>
 </template>
 
 <script>
+import request from "../../api/request.js";
 export default {
   data() {
     return {
-      yearValue: null,
-      seasonValue: null,
+      yearValue: 2020,
+      seasonValue: "Spring",
       year: [2015, 2016, 2017, 2018, 2019, 2020],
       season: ["Spring", "Summer", "fall", "winter"],
-      loading:true,
-      a: [1, 2, 3, 4, 5]
+      loading: true,
+      animeData: [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
     };
   },
   methods: {
     requestSeasonAnime() {
-      console.log(this.yearValue + this.seasonValue);
-      this.loading=!this.loading
+      var _this = this;
+      request.getSeasonAnime(this.yearValue, this.seasonValue, function(
+        response
+      ) {
+        console.log(response);
+        _this.loading = false;
+        _this.animeData = response.data.anime;
+      });
     }
+  },
+  mounted: function() {
+    var _this = this;
+    request.getSeasonAnime(this.yearValue, this.seasonValue, function(
+      response
+    ) {
+      _this.animeData = response.data.anime;
+      console.log(_this.animeData);
+      _this.loading = false;
+    });
   }
 };
 </script>
+
+<style  scoped>
+.cardTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+</style>
+
+
