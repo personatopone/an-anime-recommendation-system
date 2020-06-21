@@ -1,32 +1,36 @@
 <template>
   <v-app>
-    <v-row >
-      <v-col cols=4 v-for="(a,i) in a " :key="i" >
-        <v-card max-width="344" class="mx-auto" >
-          <v-list-item>
-            <v-list-item-avatar color="grey"></v-list-item-avatar>
-            <v-list-item-content>
-              <v-list-item-title class="headline">Our Changing Planet</v-list-item-title>
-              <v-list-item-subtitle>by Kurt Wagner</v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
+    <v-row justify="center">
+      <v-col cols="2">
+        <v-select v-model="yearValue" :items="year" label="Year" solo></v-select>
+      </v-col>
+      <v-col cols="2">
+        <v-select v-model="seasonValue" :items="season" label="Season" solo></v-select>
+      </v-col>
 
-          <v-img src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg" height="194"></v-img>
+      <v-col cols="2">
+        <div class="my-2">
+          <v-btn small color="primary" @click="requestSeasonAnime">GO</v-btn>
+        </div>
+      </v-col>
+    </v-row>
 
-          <v-card-text>Visit ten places on our planet that are undergoing the biggest changes today.</v-card-text>
+    <v-row>
+      <v-col md="auto" v-for="(a,i) in a " :key="i">
+        <v-skeleton-loader class="mx-auto" width="368" height="362" type="card,text,card-heading" md="auto" v-if="loading"></v-skeleton-loader>
+          <v-card class="mx-auto" max-width="344" v-else>
+            <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px"></v-img>
 
-          <v-card-actions>
-            <v-btn text color="deep-purple accent-4">Read</v-btn>
-            <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
-            <v-spacer></v-spacer>
-            <v-btn icon>
-              <v-icon>mdi-heart</v-icon>
-            </v-btn>
-            <v-btn icon>
-              <v-icon>mdi-share-variant</v-icon>
-            </v-btn>
-          </v-card-actions>
-        </v-card>
+            <v-card-title>Top western road trips</v-card-title>
+
+            <v-card-subtitle>1,000 miles of wonder</v-card-subtitle>
+
+            <v-card-actions>
+              <v-btn text>Share</v-btn>
+
+              <v-btn color="purple" text>Explore</v-btn>
+            </v-card-actions>
+          </v-card>
       </v-col>
     </v-row>
   </v-app>
@@ -36,8 +40,19 @@
 export default {
   data() {
     return {
-      a: [1, 2, 3,5,4,5,5,5,5,5,5]
+      yearValue: null,
+      seasonValue: null,
+      year: [2015, 2016, 2017, 2018, 2019, 2020],
+      season: ["Spring", "Summer", "fall", "winter"],
+      loading:true,
+      a: [1, 2, 3, 4, 5]
     };
+  },
+  methods: {
+    requestSeasonAnime() {
+      console.log(this.yearValue + this.seasonValue);
+      this.loading=!this.loading
+    }
   }
 };
 </script>
