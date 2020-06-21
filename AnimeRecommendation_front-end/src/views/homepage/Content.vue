@@ -19,14 +19,14 @@
       <v-col md="auto" v-for="(item,i) in animeData " :key="i">
         <v-skeleton-loader
           class="mx-auto"
-          width="368"
-          height="362"
+          width="200"
+          height="360"
           type="card,text,card-heading"
           md="auto"
           v-if="loading"
         ></v-skeleton-loader>
-        <v-card class="mx-auto" width="200" height="390" v-else>
-          <v-img :src="item.image_url" height="200px" contain ></v-img>
+        <v-card class="mx-auto" width="270" height="360" v-else>
+          <v-img :src="item.image_url" height="200px" contain></v-img>
 
           <v-card-title class="cardTitle">{{item.title}}</v-card-title>
 
@@ -49,9 +49,9 @@ export default {
   data() {
     return {
       yearValue: 2020,
-      seasonValue: "Spring",
+      seasonValue: "spring",
       year: [2015, 2016, 2017, 2018, 2019, 2020],
-      season: ["Spring", "Summer", "fall", "winter"],
+      season: ["spring", "summer", "fall", "winter"],
       loading: true,
       animeData: [
         0,
@@ -108,12 +108,13 @@ export default {
   methods: {
     requestSeasonAnime() {
       var _this = this;
+      _this.loading = true;
       request.getSeasonAnime(this.yearValue, this.seasonValue, function(
         response
       ) {
         console.log(response);
-        _this.loading = false;
         _this.animeData = response.data.anime;
+        _this.loading = false;
       });
     }
   },

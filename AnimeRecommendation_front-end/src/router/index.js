@@ -9,6 +9,11 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Homepage',
     component: () => import( '../views//homepage/Homepage.vue')
+  },
+  {
+    path:"/detail",
+    name:"detail",
+    component:()=>import("../views/animeDetail/detail.vue")
   }
 ]
 
