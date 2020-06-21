@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <v-col justify="start">
-      <v-row   >
-        <v-card max-width="344" class="mx-auto" v-for="(a,i) in a " :key="i">
+    <v-row >
+      <v-col cols=4 v-for="(a,i) in a " :key="i" >
+        <v-card max-width="344" class="mx-auto" >
           <v-list-item>
             <v-list-item-avatar color="grey"></v-list-item-avatar>
             <v-list-item-content>
@@ -27,8 +27,8 @@
             </v-btn>
           </v-card-actions>
         </v-card>
-      </v-row>
-    </v-col>
+      </v-col>
+    </v-row>
   </v-app>
 </template>
 
@@ -36,7 +36,7 @@
 export default {
   data() {
     return {
-      a: [1, 2, 3]
+      a: [1, 2, 3,5,4,5,5,5,5,5,5]
     };
   }
 };

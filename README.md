@@ -1,8 +1,14 @@
 # -AnimeRecommendation_back-end
-# -AnimeRecommendation_back-end
+Use maven and SpringBoot
 
 
-# anime_recommendation
+
+
+
+
+
+
+# animeRecommendation_front-end
 
 ## Project setup
 ```
