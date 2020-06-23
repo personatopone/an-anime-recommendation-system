@@ -1,5 +1,6 @@
 package com.cagayake;
 
+import com.cagayake.utils.RequestUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

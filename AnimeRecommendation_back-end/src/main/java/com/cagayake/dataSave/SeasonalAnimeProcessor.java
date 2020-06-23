@@ -1,4 +1,4 @@
-package com.cagayake.dataCatch;
+package com.cagayake.dataSave;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
