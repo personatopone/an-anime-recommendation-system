@@ -1,6 +1,6 @@
 <template>
   <v-app>
-      <v-app-bar app clipped-left color="blue" dense>
+    <v-app-bar app clipped-left color="blue" dense>
       <v-icon class="mx-4" large>mdi-google-ads</v-icon>
       <v-toolbar-title class="mr-12 align-center">
         <span class="title">Anime Recommendation</span>
@@ -19,21 +19,75 @@
     </v-app-bar>
 
     <v-main>
-        <v-container  class="d-flex flex-row justify-start">
-            <v-img
-              src="https://cdn.myanimelist.net/images/anime/1141/102223.jpg"
-              height="500"
-              width="200"
-              contain
-              class="grey darken-4"
-            ></v-img>
-            <v-img
-              src="https://picsum.photos/350/165?rando m"
-              height="125"
-              contain
-              class="grey darken-4"    
-            ></v-img>
-        </v-container>
+      <v-container class="MyContainer">
+        <v-card :loading="loading" class="mx-auto my-12" max-width="700">
+          <v-img height="400" :src=animeDetail.image_url contain></v-img>
+
+          <v-card-title>{{animeDetail.title}}</v-card-title>
+      
+          <v-card-text>
+             <div class="my-4 subtitle-1">janpanese:{{animeDetail.title_japanese}}</div>
+
+            <div>{{animeDetail.synopsis}}</div>
+          </v-card-text>
+
+          <v-divider class="mx-4"></v-divider>
+
+          <v-card-title>music</v-card-title>
+
+          <v-card-text>
+           <div>opening themes:{{animeDetail.opening_themes}}</div>
+           <div>ending themes:{{animeDetail.ending_themes}}</div>
+          </v-card-text>
+
+          <v-card-actions>
+            <v-btn color="deep-purple lighten-2" text @click="reserve">Reserve</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-container>
     </v-main>
   </v-app>
 </template>
+
+<script>
+import request from "../../api/request.js";
+export default {
+  data() {
+    return {
+      animeDetail: null,
+      loading: false
+    };
+  },
+  methods: {
+    reserve() {
+      var _this = this;
+      request.getAnimeDetail(this.$store.state.anime_id, function(response) {
+        _this.animeDetail = response.data;
+        console.log(_this.animeDetail);
+      });
+    }
+  },
+  mounted: function() {
+    var _this = this;
+    request.getAnimeDetail(this.$store.state.anime_id, function(response) {
+      _this.animeDetail = response.data;
+      console.log(_this.animeDetail);
+    });
+  }
+};
+</script>
+
+<style  scoped>
+.MyContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.item1 {
+  flex-grow: 1;
+}
+
+.item2 {
+  flex-grow: 4;
+}
+</style>

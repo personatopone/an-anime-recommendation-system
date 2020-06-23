@@ -26,7 +26,7 @@
           v-if="loading"
         ></v-skeleton-loader>
 
-        <v-card max-width="300" height="392" class="mx-auto" v-else @click="displayDetail">
+        <v-card max-width="300" height="392" class="mx-auto" v-else @click="displayDetail(item.mal_id)">
           <v-list-item>
             <v-list-item-content>
               <v-list-item-title class="headline">{{item.title}}</v-list-item-title>
@@ -68,8 +68,10 @@ export default {
         _this.loading = false;
       });
     },
-    displayDetail(){
+    displayDetail(id){
+      this.$store.commit("saveAnimeID",id);
       this.$router.push("/detail")
+      console.log(id)
     }
   },
   mounted: function() {

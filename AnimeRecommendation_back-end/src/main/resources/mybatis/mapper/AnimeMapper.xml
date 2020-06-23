@@ -12,6 +12,6 @@
     </select>
 
     <select id="findAnimeBySeasonAndYear" parameterType="anime" resultType="anime" >
-         select title,source,image_url,synopsis  from anime where anime.season_year = #{season_year} and  anime.season_name = #{season_name}
+         select mal_id,title,source,image_url,synopsis  from anime where anime.season_year = #{season_year} and  anime.season_name = #{season_name}
     </select>
 </mapper>
