@@ -1,7 +1,6 @@
 <template>
   <v-app>
-<v-app-bar app clipped-left color="blue" dense>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar app clipped-left color="blue" dense>
       <v-icon class="mx-4" large>mdi-google-ads</v-icon>
       <v-toolbar-title class="mr-12 align-center">
         <span class="title">Anime Recommendation</span>
@@ -18,5 +17,22 @@
         ></v-text-field>
       </v-row>
     </v-app-bar>
+
+    <v-main>
+        <v-container  class="d-flex flex-row justify-start">
+            <v-img
+              src="https://picsum.photos/350/165?random"
+              height="125"
+              contain
+              class="grey darken-4"
+            ></v-img>
+            <v-img
+              src="https://picsum.photos/350/165?random"
+              height="125"
+              contain
+              class="grey darken-4"
+            ></v-img>
+        </v-container>
+    </v-main>
   </v-app>
 </template>

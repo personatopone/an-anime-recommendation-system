@@ -19,24 +19,24 @@
       <v-col md="auto" v-for="(item,i) in animeData " :key="i">
         <v-skeleton-loader
           class="mx-auto"
-          width="200"
-          height="360"
-          type="card,text,card-heading"
+          width="300"
+          height="392"
+          type="text,image,list-item-two-line"
           md="auto"
           v-if="loading"
         ></v-skeleton-loader>
-        <v-card class="mx-auto" width="270" height="360" v-else>
-          <v-img :src="item.image_url" height="200px" contain></v-img>
 
-          <v-card-title class="cardTitle">{{item.title}}</v-card-title>
+        <v-card max-width="300" height="392" class="mx-auto" v-else @click="displayDetail">
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-title class="headline">{{item.title}}</v-list-item-title>
+              <v-list-item-subtitle>{{item.source}}</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
 
-          <v-card-subtitle>{{item.source}}</v-card-subtitle>
+          <v-img contain :src="item.image_url" height="194"></v-img>
 
-          <v-card-actions>
-            <v-btn text>Share</v-btn>
-
-            <v-btn color="purple" text>Explore</v-btn>
-          </v-card-actions>
+          <v-card-text class="cardTitle">{{item.synopsis}}</v-card-text>
         </v-card>
       </v-col>
     </v-row>
@@ -53,56 +53,7 @@ export default {
       year: [2015, 2016, 2017, 2018, 2019, 2020],
       season: ["spring", "summer", "fall", "winter"],
       loading: true,
-      animeData: [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
+      animeData: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     };
   },
   methods: {
@@ -116,6 +67,9 @@ export default {
         _this.animeData = response.data.anime;
         _this.loading = false;
       });
+    },
+    displayDetail(){
+      this.$router.push("/detail")
     }
   },
   mounted: function() {
@@ -132,12 +86,12 @@ export default {
 </script>
 
 <style  scoped>
-.cardTitle {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+.v-card__text {
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+
 }
 </style>
 
