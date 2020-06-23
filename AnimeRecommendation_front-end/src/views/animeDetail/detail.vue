@@ -21,8 +21,9 @@
     <v-main>
         <v-container  class="d-flex flex-row justify-start">
             <v-img
-              src="https://picsum.photos/350/165?random"
-              height="125"
+              src="https://cdn.myanimelist.net/images/anime/1141/102223.jpg"
+              height="500"
+              width="200"
               contain
               class="grey darken-4"
             ></v-img>
