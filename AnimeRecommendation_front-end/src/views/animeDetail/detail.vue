@@ -27,10 +27,10 @@
               class="grey darken-4"
             ></v-img>
             <v-img
-              src="https://picsum.photos/350/165?random"
+              src="https://picsum.photos/350/165?rando m"
               height="125"
               contain
-              class="grey darken-4"
+              class="grey darken-4"    
             ></v-img>
         </v-container>
     </v-main>

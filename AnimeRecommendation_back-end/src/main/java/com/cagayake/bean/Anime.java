@@ -15,4 +15,6 @@ public class Anime {
     String type;
     String source;
     String synopsis;
+    String season_year;
+    String season_name;
 }

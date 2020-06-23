@@ -8,7 +8,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+
+
     private UserMapper mapper;
 
     @Override
@@ -18,5 +19,10 @@ public class UserServiceImpl implements UserService {
         }else {
             return mapper.findUserByName(name);
         }
+    }
+
+    @Autowired
+    public void setMapper(UserMapper mapper) {
+        this.mapper = mapper;
     }
 }

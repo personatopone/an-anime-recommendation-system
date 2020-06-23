@@ -60,11 +60,11 @@ export default {
     requestSeasonAnime() {
       var _this = this;
       _this.loading = true;
-      request.getSeasonAnime(this.yearValue, this.seasonValue, function(
+      request.getSeasonAnime(this.seasonValue, this.yearValue, function(
         response
       ) {
         console.log(response);
-        _this.animeData = response.data.anime;
+        _this.animeData = response.data.data;
         _this.loading = false;
       });
     },
@@ -74,10 +74,10 @@ export default {
   },
   mounted: function() {
     var _this = this;
-    request.getSeasonAnime(this.yearValue, this.seasonValue, function(
+    request.getSeasonAnime(this.seasonValue, this.yearValue, function(
       response
     ) {
-      _this.animeData = response.data.anime;
+      _this.animeData = response.data.data;
       console.log(_this.animeData);
       _this.loading = false;
     });

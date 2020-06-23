@@ -2,9 +2,16 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="">
-    <select id="findUserByName" parameterType="String" resultType="user">
-        select * from user where user.name=#{name};
+<mapper namespace="com.cagayake.mapper.AnimeMapper">
+    <insert id="saveAnime" parameterType="anime" >
+         insert into anime(mal_id,title,image_url,type,source,synopsis,season_year,season_name) value (#{mal_id},#{title},#{image_url},#{type},#{source},#{synopsis},#{season_year},#{season_name})
+    </insert>
+
+    <select id="findAnimeById" parameterType="int" resultType="anime">
+         select title from anime where anime.mal_id =#{id}
     </select>
 
+    <select id="findAnimeBySeasonAndYear" parameterType="anime" resultType="anime" >
+         select title,source,image_url,synopsis  from anime where anime.season_year = #{season_year} and  anime.season_name = #{season_name}
+    </select>
 </mapper>

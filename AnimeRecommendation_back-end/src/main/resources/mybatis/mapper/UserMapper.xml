@@ -6,5 +6,4 @@
     <select id="findUserByName" parameterType="String" resultType="user">
         select * from user where user.name=#{name};
     </select>
-
 </mapper>
