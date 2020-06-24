@@ -18,7 +18,9 @@ After that, right-click the anime table, click "Execute SQL File" button, fill t
 
 # -AnimeRecommendation_back-end
 Use maven and SpringBoot
+
 Import AnimeRecommendation_back-end to Intellij IDEA
+
 In the Intellij program, click File -> Setting. In the setting, click "Plugins", find Lombok and install, then click apply. Then click the compiler in "Build, Execution, Deployment" in the setting, click "Annotation Processors" from compiler button. choose "Enable above annotation processing", then click apply and ok.
 
 
@@ -28,7 +30,9 @@ First, download Visual Studio Code
 https://code.visualstudio.com/
 And node.js
 https://nodejs.org/en/download/
+
 Import animeRecommendation_front-end to Visual Studio Code
+
 Click Terminal -> New Terminal. Enter the following corresponding commands in the command box
 
 ## Project setup
