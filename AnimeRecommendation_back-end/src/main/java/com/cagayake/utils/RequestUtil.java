@@ -13,7 +13,7 @@ import java.io.IOException;
 public class RequestUtil {
 
     public static String sendGet(String url) {
-
+        //1. Obtain an httpclient object
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpget = new HttpGet(url);
         httpget.addHeader("Content-Type","application/json");
