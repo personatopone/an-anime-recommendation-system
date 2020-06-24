@@ -4,7 +4,6 @@ import com.cagayake.api.common.Response;
 import com.cagayake.bean.Anime;
 import com.cagayake.service.homepage.HomePageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
