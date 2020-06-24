@@ -17,8 +17,8 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
     private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     /**
-     * 判断用户是否想要登入。
-     * 检测header里面是否包含Authorization字段即可
+     * Determine whether the user wants to log in
+     * Check if the Authorization is included in the header
      */
     @Override
     protected boolean isLoginAttempt(ServletRequest request, ServletResponse response) {
@@ -27,9 +27,6 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         return authorization != null;
     }
 
-    /**
-     *
-     */
     @Override
     protected boolean executeLogin(ServletRequest request, ServletResponse response) throws Exception {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
@@ -52,9 +49,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         return true;
     }
 
-    /**
-     * 对跨域提供支持
-     */
+
     @Override
     protected boolean preHandle(ServletRequest request, ServletResponse response) throws Exception {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
