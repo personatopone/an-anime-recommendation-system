@@ -16,7 +16,7 @@ public class RequestUtil {
 
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpget = new HttpGet(url);
-        httpget.addHeader("Content-Type","pplication/json");
+        httpget.addHeader("Content-Type","application/json");
         CloseableHttpResponse response = null;
         try {
             response = httpclient.execute(httpget);
