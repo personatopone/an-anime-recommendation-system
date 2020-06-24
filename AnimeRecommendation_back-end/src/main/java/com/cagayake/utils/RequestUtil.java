@@ -20,6 +20,7 @@ public class RequestUtil {
         httpget.addHeader("Content-Type","application/json");
         CloseableHttpResponse response = null;
         try {
+            //3. Execute the get request and return the result
             response = httpclient.execute(httpget);
         } catch (IOException e1) {
             e1.printStackTrace();
