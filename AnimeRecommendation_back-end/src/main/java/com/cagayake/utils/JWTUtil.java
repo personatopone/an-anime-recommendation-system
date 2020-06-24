@@ -18,7 +18,7 @@ public class JWTUtil {
      * 校验token是否正确
      * @param token 密钥
      * @param secret user's password
-     * @return 是否正确
+     * @return is or not right
      */
     public static boolean verify(String token, String username, String secret) {
         try {
