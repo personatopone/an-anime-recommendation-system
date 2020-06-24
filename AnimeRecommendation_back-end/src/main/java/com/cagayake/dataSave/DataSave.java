@@ -18,8 +18,10 @@ public class DataSave {
         gson = new Gson();
     }
 
-    public void saveSeasonAnime(int startYear,int endYear) {
+    public void saveSeasonAnime() {
 
+        int startYear = 2010;
+        int endYear = 2020;
         String[] seasons = {"spring","summer","fall","winter"};
 
         while (startYear<=endYear){
