@@ -33,10 +33,6 @@ public class DataSave {
                         anime.setSeason_year(SeasonAnime.getSeason_year());
                         animeMapper.saveAnime(anime);
                     }
-                    else{
-                        System.out.println("It already exists.");
-                        continue;
-                    }
                 }
             }
 
