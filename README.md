@@ -21,6 +21,8 @@ Use maven and SpringBoot
 
 Import "AnimeRecommendation_back-end" folder to Intellij IDEA
 
+### Using Lombok
+There is a link https://projectlombok.org/setup/intellij to show you how we do it.
 In the Intellij program, click File -> Setting. In the setting, click "Plugins", find Lombok and install, then click apply. Then click the compiler in "Build, Execution, Deployment" in the setting, click "Annotation Processors" from compiler button. choose "Enable above annotation processing", then click apply and ok.
 
 
