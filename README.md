@@ -33,13 +33,17 @@ Click Terminal -> New Terminal. Enter the following corresponding commands in th
 
 ## Project setup
 ```
-npm install
+npm install(only first need)
 ```
 
 ### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
+
+When you enter this command, you can see this right output. Under this picture, You can click the URL behind the "local" to see the animation recommendation webpage.
+![image](https://github.com/bsu-cs222-summer20-dll/an-anime-recommendation-system/blob/master/output1.png)
+
 
 ### Compiles and minifies for production
 ```
