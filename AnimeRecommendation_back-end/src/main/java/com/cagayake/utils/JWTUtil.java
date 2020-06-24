@@ -15,10 +15,10 @@ public class JWTUtil {
     private static final long EXPIRE_TIME = 30*60*1000;
 
     /**
-     * 校验token是否正确
-     * @param token 密钥
-     * @param secret user's password
-     * @return is or not right
+     * Verify that the token is correct
+     * @param token key
+     * @param secret User's password
+     * @return is it right or not
      */
     public static boolean verify(String token, String username, String secret) {
         try {
@@ -34,8 +34,8 @@ public class JWTUtil {
     }
 
     /**
-     * 获得token中的信息无需secret解密也能获得
-     * @return token中包含的用户名
+     * Get the information in the token without secret decryption
+     * @return The username contained in the token
      */
     public static String getUsername(String token) {
         try {
@@ -47,16 +47,15 @@ public class JWTUtil {
     }
 
     /**
-     * 生成签名,30min后过期
-     * @param username 用户名
-     * @param secret 用户的密码
-     * @return 加密的token
+     * Generate a signature, which expires after 30 minutes
+     * @param username username
+     * @param secret User's password
+     * @return Encrypted token
      */
     public static String sign(String username, String secret) {
         try {
             Date date = new Date(System.currentTimeMillis()+EXPIRE_TIME);
             Algorithm algorithm = Algorithm.HMAC256(secret);
-            // 附带username信息
             return JWT.create()
                     .withClaim("username", username)
                     .withExpiresAt(date)
