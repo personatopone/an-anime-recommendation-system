@@ -54,7 +54,7 @@ import request from "../../api/request.js";
 export default {
   data() {
     return {
-      animeDetail: null,
+      animeDetail: [],
       loading: false
     };
   },
@@ -63,7 +63,6 @@ export default {
       var _this = this;
       request.getAnimeDetail(this.$store.state.anime_id, function(response) {
         _this.animeDetail = response.data;
-        console.log(_this.animeDetail);
       });
     }
   },
@@ -71,7 +70,6 @@ export default {
     var _this = this;
     request.getAnimeDetail(this.$store.state.anime_id, function(response) {
       _this.animeDetail = response.data;
-      console.log(_this.animeDetail);
     });
   }
 };

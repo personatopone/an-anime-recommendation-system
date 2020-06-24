@@ -1,7 +1,6 @@
 package com.cagayake.mapper;
 
 import com.cagayake.bean.Anime;
-import com.cagayake.utils.JWTUtilTest;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

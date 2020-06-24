@@ -2,7 +2,6 @@ package com.cagayake.service;
 
 import com.cagayake.bean.Anime;
 import com.cagayake.service.homepage.HomePageService;
-import com.cagayake.utils.JWTUtilTest;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

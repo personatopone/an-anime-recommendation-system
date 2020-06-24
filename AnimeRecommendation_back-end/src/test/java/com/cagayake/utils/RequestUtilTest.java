@@ -1,6 +1,5 @@
 package com.cagayake.utils;
 
-
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
