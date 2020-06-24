@@ -6,13 +6,7 @@ Using “root” as username and “123456” as password. Other settings are in
 
 Also, user should install Navicat program.
 https://www.navicat.com/en/download/navicat-for-mysql
-Then create a connection. Use “root” as username and use “123456” as password. And user create a database named animedata in this connection. Right-click the “Table” to choose “New Table” button under animedata database, and design this table named anime as shown in the following figure. (Note that the first row is mal_id)
-
-![image](https://github.com/bsu-cs222-summer20-dll/an-anime-recommendation-system/blob/master/structure1.png)
-
-
-After that, right-click the anime table, click "Execute SQL File" button, fill the anime.sql to the choosing box, and then click "start" to complete executing.
-
+Then create a connection. Use “root” as username and use “123456” as password. And user create a database named animedata in this connection. After that, right-click the "Table" , click "Execute SQL File" button, fill the anime.sql to the choosing box, and then click "start" to complete executing. Then you can check data via double-click anime table.
 
 
 
