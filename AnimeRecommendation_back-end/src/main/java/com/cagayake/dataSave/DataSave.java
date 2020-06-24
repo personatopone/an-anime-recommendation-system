@@ -33,6 +33,9 @@ public class DataSave {
                         anime.setSeason_year(SeasonAnime.getSeason_year());
                         animeMapper.saveAnime(anime);
                     }
+                    else{
+                        continue;
+                    }
                 }
             }
 
