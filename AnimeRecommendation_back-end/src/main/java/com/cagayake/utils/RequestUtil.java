@@ -27,6 +27,7 @@ public class RequestUtil {
         }
         String result = null;
         try {
+            //4. Process the result, and the result is returned as a string
             HttpEntity entity = response.getEntity();
             if (entity != null) {
                 result = EntityUtils.toString(entity);
