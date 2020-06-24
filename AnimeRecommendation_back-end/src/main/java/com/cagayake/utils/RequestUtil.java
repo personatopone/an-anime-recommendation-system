@@ -13,21 +13,21 @@ import java.io.IOException;
 public class RequestUtil {
 
     public static String sendGet(String url) {
-        //1. Obtain an httpclient object
+
         CloseableHttpClient httpclient = HttpClients.createDefault();
-        //2. Generate a get request
+
         HttpGet httpget = new HttpGet(url);
         httpget.addHeader("Content-Type","application/json");
         CloseableHttpResponse response = null;
         try {
-            //3. Execute the get request and return the result
+
             response = httpclient.execute(httpget);
         } catch (IOException e1) {
             e1.printStackTrace();
         }
         String result = null;
         try {
-            //4. Process the result, and the result is returned as a string
+
             HttpEntity entity = response.getEntity();
             if (entity != null) {
                 result = EntityUtils.toString(entity);
