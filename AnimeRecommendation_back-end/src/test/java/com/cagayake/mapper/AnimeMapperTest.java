@@ -19,6 +19,8 @@ public class AnimeMapperTest {
         anime.setSeason_name("spring");
         anime.setSeason_year("2013");
         anime.setMal_id(2);
+        //Because it is an insertion test, if you want to repeat the test,
+        //please modify the primary key or delete the record of the duplicate primary key in the database
         anime.setTitle("animeTest");
         mapper.findAnimeBySeasonAndYear(anime);
         mapper.findAnimeById(12421);
