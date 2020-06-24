@@ -34,6 +34,7 @@ public class DataSave {
                         animeMapper.saveAnime(anime);
                     }
                     else{
+                        System.out.println("It already exists.");
                         continue;
                     }
                 }
