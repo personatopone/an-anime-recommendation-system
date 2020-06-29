@@ -17,4 +17,6 @@ public class Anime {
     String synopsis;
     String season_year;
     String season_name;
+    String japanese_title;
+    String score;
 }
