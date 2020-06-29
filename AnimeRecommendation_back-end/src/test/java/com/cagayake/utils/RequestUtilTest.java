@@ -11,7 +11,7 @@ public class RequestUtilTest {
 
     @Test
     void testRequest(){
-        RequestUtil.sendGet("https://www.baidu.com");
+        RequestUtil.sendGet("https://www.google.com");
         logger.info("RequestUtil test passed");
     }
 }
