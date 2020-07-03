@@ -19,14 +19,14 @@
     </v-app-bar>
 
     <v-main>
-      <v-container class="MyContainer">
+      <v-container>
         <v-card :loading="loading" class="mx-auto my-12" max-width="700">
-          <v-img height="400" :src=animeDetail.image_url contain></v-img>
+          <v-img height="400" :src="animeDetail.image_url" contain></v-img>
 
           <v-card-title>{{animeDetail.title}}</v-card-title>
-      
+
           <v-card-text>
-             <div class="my-4 subtitle-1">janpanese:{{animeDetail.title_japanese}}</div>
+            <div class="my-4 subtitle-1">janpanese:{{animeDetail.title_japanese}}</div>
 
             <div>{{animeDetail.synopsis}}</div>
           </v-card-text>
@@ -36,14 +36,35 @@
           <v-card-title>music</v-card-title>
 
           <v-card-text>
-           <div>opening themes:{{animeDetail.opening_themes}}</div>
-           <div>ending themes:{{animeDetail.ending_themes}}</div>
+            <div>opening themes:{{animeDetail.opening_themes}}</div>
+            <div>ending themes:{{animeDetail.ending_themes}}</div>
           </v-card-text>
 
           <v-card-actions>
             <v-btn color="deep-purple lighten-2" text @click="reserve">Reserve</v-btn>
           </v-card-actions>
         </v-card>
+
+        <div>comment:</div>
+           
+        <v-timeline :align-top=true :dense=true  >
+          <v-timeline-item
+            v-for="n in 3"
+            :key="n"
+            right=true
+
+          >
+            <template v-slot:icon>
+              <v-avatar v-if="avatar">
+                <img src="http://i.pravatar.cc/64" />
+              </v-avatar>
+            </template>
+            <v-card class="elevation-2">
+              <v-card-title class="headline">Lorem ipsum</v-card-title>
+              <v-card-text>Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.</v-card-text>
+            </v-card>
+          </v-timeline-item>
+        </v-timeline>
       </v-container>
     </v-main>
   </v-app>
@@ -76,10 +97,7 @@ export default {
 </script>
 
 <style  scoped>
-.MyContainer {
-  display: flex;
-  flex-direction: row;
-}
+
 
 .item1 {
   flex-grow: 1;
