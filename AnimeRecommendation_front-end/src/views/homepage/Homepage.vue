@@ -8,7 +8,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>Season Anime</v-list-item-title>
+            <v-list-item-title @click="routerTo('/homepage')">Season Anime</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -18,7 +18,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>Ranking</v-list-item-title>
+            <v-list-item-title @click="routerTo('/homepage/ranking')" >Ranking</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -45,14 +45,13 @@
 
     <v-main>
       <v-container class="fill-height">
-        <mycontent></mycontent>
+        <router-view></router-view>
       </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import mycontent from "./Content.vue"
 export default {
   props: {
     source: String
@@ -60,8 +59,15 @@ export default {
   data: () => ({
     drawer: true
   }),
+
+  methods:{
+
+    routerTo(url) {
+      this.$router.push(url);
+    }
+  },
   components:{
-    mycontent,
+ 
   },
   created() {
     this.$vuetify.theme.dark = false;

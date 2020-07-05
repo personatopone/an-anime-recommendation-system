@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 public class Genre {
-   private int id;
-   private String type;
+   private int mal_id;
+   private String name;
 }
 
 

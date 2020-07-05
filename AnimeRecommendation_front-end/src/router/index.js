@@ -3,17 +3,32 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-  const routes = [
- 
+const routes = [
+
+
   {
-    path: '/',
+    path: '/homepage',
     name: 'Homepage',
-    component: () => import( '../views//homepage/Homepage.vue')
+    component: () => import('../views//homepage/Homepage.vue'),
+    children: [{
+        path: "",
+        name: "content",
+        component: () => import('../views/homepage/Content.vue')
+      },
+      {
+        path:"ranking",
+        name:"Ranking",
+        component: () => import('../views/ranking/RankingContent.vue')
+      }
+    ]
   },
   {
-    path:"/detail",
-    name:"detail",
-    component:()=>import("../views/animeDetail/detail.vue")
+    path:"/",redirect: "/homepage"
+  },
+  {
+    path: "/detail",
+    name: "Detail",
+    component: () => import("../views/animeDetail/detail.vue")
   }
 ]
 

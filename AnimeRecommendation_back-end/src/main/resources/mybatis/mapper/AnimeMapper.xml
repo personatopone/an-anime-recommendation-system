@@ -14,4 +14,13 @@
     <select id="findAnimeBySeasonAndYear" parameterType="anime" resultType="anime" >
          select mal_id,title,source,image_url,synopsis  from anime where anime.season_year = #{season_year} and  anime.season_name = #{season_name}
     </select>
+
+
+    <select id="findALl" resultType="anime">
+        select * from anime;
+    </select>
+
+    <update id="updateAnime" parameterType="anime">
+        update anime set title_japanese = #{title_japanese} ,score = #{score},click_conut = #{click_conut} where mal_id = #{mal_id}
+    </update>
 </mapper>

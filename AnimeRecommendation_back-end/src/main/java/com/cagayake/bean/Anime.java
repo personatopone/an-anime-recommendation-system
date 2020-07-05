@@ -9,14 +9,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 public class Anime {
-    int mal_id;
-    String title;
-    String image_url;
-    String type;
-    String source;
-    String synopsis;
-    String season_year;
-    String season_name;
-    String japanese_title;
-    String score;
+   private int mal_id;
+   private String title;
+   private String image_url;
+   private  String type;
+   private String source;
+   private String synopsis;
+   private String season_year;
+   private String season_name;
+   private String title_japanese;
+   private String score;
+   private int click_conut;
 }
