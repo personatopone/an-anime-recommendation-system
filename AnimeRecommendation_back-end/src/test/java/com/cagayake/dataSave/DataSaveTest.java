@@ -15,9 +15,9 @@ public class DataSaveTest {
 
     @Test
     void test(){
-        //dataSave.saveSeasonAnime();
-        //logger.info("dataSave test passed");
-        dataSave.saveAnimeDetail();
+        dataSave.saveSeasonAnime();
+        logger.info("dataSave test passed");
+
 
     }
 }
