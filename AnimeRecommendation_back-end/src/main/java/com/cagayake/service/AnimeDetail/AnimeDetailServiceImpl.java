@@ -32,15 +32,15 @@ public class AnimeDetailServiceImpl implements AnimeDetailService {
 
     @Override
     public Anime findAnime(int mal_id) {
+        Anime anime = animeMapper.findAnimeById(mal_id);
+        anime.setClick_conut(anime.getClick_conut()+1);
+        animeMapper.updateAnime(anime);
         return animeMapper.findAnimeById(mal_id);
     }
 
     @Override
     public List<Song> findSong(int mal_id, String type) {
 
-        Anime anime = animeMapper.findAnimeById(mal_id);
-        anime.setClick_conut(anime.getClick_conut()+1);
-        animeMapper.updateAnime(anime);
         Song song = new Song();
         song.setMal_id(mal_id);
         song.setType(type);

@@ -36,8 +36,8 @@
           <v-card-title>music</v-card-title>
 
           <v-card-text>
-            <div>opening themes:{{animeDetail.opening_themes}}</div>
-            <div>ending themes:{{animeDetail.ending_themes}}</div>
+            <div>opening themes:{{op[1]}}</div>
+            <div>ending themes:{{ed[1]}}</div>
           </v-card-text>
 
           <v-card-actions>
@@ -74,14 +74,19 @@ export default {
       loading: false,
       comment_content: "",
       username: "",
-      comment: []
+      comment: [],
+      op:[],
+      ed:[]
     };
   },
   methods: {
     reserve() {
       var _this = this;
+     
       request.getAnimeDetail(this.$store.state.anime_id, function(response) {
-        _this.animeDetail = response.data; 
+        _this.animeDetail = response.data.data.anime; 
+        _this.op = response.data.data.op;
+        _this.ed = response.data.data.ed;
       });
     },
     saveComment() {
@@ -106,9 +111,14 @@ export default {
   },
   mounted: function() {
     var _this = this;
-    request.getAnimeDetail(this.$store.state.anime_id, function(response) {
-      _this.animeDetail = response.data;
-    });
+     
+      request.getAnimeDetail(this.$store.state.anime_id, function(response) {
+        _this.animeDetail = response.data.data.anime; 
+        _this.op = response.data.data.op;
+        _this.ed = response.data.data.ed;
+
+        console.log(response)
+      });
 
     request.getComment(this.$store.state.anime_id, function(response) {
       _this.comment = response.data.data;

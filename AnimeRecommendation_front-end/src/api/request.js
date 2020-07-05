@@ -7,7 +7,7 @@ export default{
         })
     },
     getAnimeDetail:function(id,callback){
-        axios.get(`https://api.jikan.moe/v3/anime/${id}`).then(function(response){
+        axios.get(`http://127.0.0.1:8081/api/anime/get/${id}`).then(function(response){
             callback(response)
         })
     },
@@ -20,6 +20,11 @@ export default{
         axios.get(`http://127.0.0.1:8081/api/comment/get/${mal_id}`).then(function(response){
             callback(response)
             console.log(mal_id+"adssad");
+        })
+    },
+    getRanking:function(callback){
+        axios.get(`http://127.0.0.1:8081/api/anime/ranking`).then(function(response){
+            callback(response)
         })
     }
 }

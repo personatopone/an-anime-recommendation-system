@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins = "*")
-public class SeasonAnime {
+public class HomePage {
 
 
     HomePageService homePageService;
@@ -22,9 +22,15 @@ public class SeasonAnime {
         return new Response(200,"success",animeList);
     }
 
+    @RequestMapping(value = "/anime/ranking",method = RequestMethod.GET,produces ="application/json")
+    public Response RankingAnime(){
+        return new Response(200,"success",homePageService.RankingAnime());
+    }
 
     @Autowired
     public void setHomePageService(HomePageService homePageService) {
         this.homePageService = homePageService;
     }
+
+
 }

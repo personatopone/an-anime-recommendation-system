@@ -14,5 +14,5 @@ public interface AnimeMapper {
     List<Anime> findAnimeBySeasonAndYear(Anime anime);
     List<Anime> findALl();
     void updateAnime(Anime anime);
-    List<Anime> findAnimeByScore();
+    List<Anime> findAnimeByClickCount();
 }

@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface HomePageService {
     List<Anime> animeList(String year,String season);
+    List<Anime> RankingAnime();
 }

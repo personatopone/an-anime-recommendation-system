@@ -23,4 +23,8 @@
     <update id="updateAnime" parameterType="anime">
         update anime set title_japanese = #{title_japanese} ,score = #{score},click_conut = #{click_conut} where mal_id = #{mal_id}
     </update>
+
+    <select id="findAnimeByClickCount" resultType="anime">
+        select * from anime order by anime.click_conut DESC ;
+    </select>
 </mapper>

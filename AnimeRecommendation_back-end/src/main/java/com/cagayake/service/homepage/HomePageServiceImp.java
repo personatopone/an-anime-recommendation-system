@@ -29,6 +29,11 @@ public class HomePageServiceImp implements HomePageService {
         return null;
     }
 
+    @Override
+    public List<Anime> RankingAnime() {
+        return animeMapper.findAnimeByClickCount().subList(0,50);
+    }
+
     @Autowired
     public void setAnimeMapper(AnimeMapper animeMapper) {
         this.animeMapper = animeMapper;
