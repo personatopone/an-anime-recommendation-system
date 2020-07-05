@@ -20,7 +20,7 @@ public class AnimeDetailTest {
 
         animeDetailService.saveComment(new Comment(1,"a","a","a"));
         animeDetailService.findComment(1);
-        animeDetailService.findAnime(1);
+        animeDetailService.findAnime(777);
         animeDetailService.findSong(777,"op");
         logger.info("AnimeDetailService test passed");
 
