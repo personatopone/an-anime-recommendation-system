@@ -28,6 +28,6 @@ public class AnimeMapperTest {
         logger.info("anime mapper test passed");
         anime.setScore("0");
         mapper.updateAnime(anime);
-        logger.info("anime mapper update function passed");
+        logger.info("anime mapper update function test passed");
     }
 }

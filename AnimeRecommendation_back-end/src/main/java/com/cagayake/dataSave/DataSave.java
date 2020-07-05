@@ -43,7 +43,7 @@ public class DataSave {
                 SeasonJsonList SeasonAnime = gson.fromJson(json,SeasonJsonList.class);
                 for (Anime anime:SeasonAnime.getAnime()) {
 
-                    if (animeMapper.findAnimeById(anime.getMal_id()).size()==0){
+                    if (animeMapper.findAnimeById(anime.getMal_id())!=null){
                         anime.setSeason_name(SeasonAnime.getSeason_name());
                         anime.setSeason_year(SeasonAnime.getSeason_year());
                         animeMapper.saveAnime(anime);
