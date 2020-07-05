@@ -8,7 +8,7 @@
     </insert>
 
     <select id="findAnimeById" parameterType="int" resultType="anime">
-         select title from anime where anime.mal_id =#{id}
+         select * from anime where anime.mal_id =#{id}
     </select>
 
     <select id="findAnimeBySeasonAndYear" parameterType="anime" resultType="anime" >

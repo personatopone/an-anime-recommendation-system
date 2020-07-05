@@ -66,7 +66,7 @@ public class DataSave {
     public void saveAnimeDetail(){
 
         List<Anime> allAnime = animeMapper.findALl();
-        for (Anime anime:allAnime.subList(6477,allAnime.size()) ){
+        for (Anime anime:allAnime.subList(6910,allAnime.size()) ){
             String json = RequestUtil.sendGet("https://api.jikan.moe/v3/anime/"+anime.getMal_id());
             AnimeDetailJson detailJson = gson.fromJson(json,AnimeDetailJson.class);
             anime.setScore(detailJson.getScore());

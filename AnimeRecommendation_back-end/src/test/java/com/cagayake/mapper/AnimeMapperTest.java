@@ -26,5 +26,8 @@ public class AnimeMapperTest {
         mapper.findAnimeById(12421);
         mapper.saveAnime(anime);
         logger.info("anime mapper test passed");
+        anime.setScore("0");
+        mapper.updateAnime(anime);
+        logger.info("anime mapper update function passed");
     }
 }

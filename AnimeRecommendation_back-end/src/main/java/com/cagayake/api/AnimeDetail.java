@@ -27,6 +27,7 @@ public class AnimeDetail {
         List<Comment> comments = animeDetailService.findComment(mal_id);
         return new Response(200,"success",comments);
     }
+
     @Autowired
     public void setAnimeDetailService(AnimeDetailService animeDetailService) {
         this.animeDetailService = animeDetailService;

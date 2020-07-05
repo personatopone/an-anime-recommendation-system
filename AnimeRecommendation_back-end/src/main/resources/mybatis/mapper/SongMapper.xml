@@ -7,4 +7,8 @@
     <insert id="saveSong" parameterType="song">
         insert into song(mal_id,type,name) value (#{mal_id},#{type},#{name})
     </insert>
+
+    <select id="findSongByIdAndType" parameterType="song" resultType="song">
+        select * from song where mal_id = #{mal_id} and type = #{type}
+    </select>
 </mapper>

@@ -46,7 +46,7 @@
         </v-card>
         <v-divider></v-divider>
 
-        <v-text-field label="name" placeholder="Placeholder" solo v-model="username"></v-text-field>
+        <v-text-field label="name" placeholder="name" solo v-model="username"></v-text-field>
         <v-textarea clearable clear-icon="cancel" label="comment:" v-model="comment_content"></v-textarea>
         <div class="d-flex flex-row-reverse myDvider">
           <v-btn color="primary" @click="saveComment">submit</v-btn>
@@ -81,10 +81,11 @@ export default {
     reserve() {
       var _this = this;
       request.getAnimeDetail(this.$store.state.anime_id, function(response) {
-        _this.animeDetail = response.data;
+        _this.animeDetail = response.data; 
       });
     },
     saveComment() {
+      var _this = this;
       var myDate = new Date();
       request.saveComment(
         this.username,
@@ -93,7 +94,11 @@ export default {
         this.$store.state.anime_id,
         function(response) {
           console.log(response);
-
+          _this.comment.push({
+            "username": _this.username,
+            "time":myDate.toString() ,
+            "comment": _this.comment_content
+          })
          
         }
       );

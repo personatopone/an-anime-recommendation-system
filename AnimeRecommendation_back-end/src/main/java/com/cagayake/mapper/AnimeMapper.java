@@ -10,8 +10,9 @@ import java.util.List;
 @Repository()
 public interface AnimeMapper {
     void saveAnime(Anime anime);
-    List<Anime> findAnimeById(int id);
+    Anime findAnimeById(int id);
     List<Anime> findAnimeBySeasonAndYear(Anime anime);
     List<Anime> findALl();
     void updateAnime(Anime anime);
+    List<Anime> findAnimeByScore();
 }
