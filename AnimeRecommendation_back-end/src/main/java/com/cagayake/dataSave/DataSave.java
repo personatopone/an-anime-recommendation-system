@@ -65,11 +65,8 @@ public class DataSave {
      */
     public void saveAnimeDetail(){
 
-        Anime anime1 = new Anime();
-        anime1.setSeason_year("2020");
-        anime1.setSeason_name("Spring");
         List<Anime> allAnime = animeMapper.findALl();
-        for (Anime anime:allAnime ){
+        for (Anime anime:allAnime.subList(387,7000) ){
             String json = RequestUtil.sendGet("https://api.jikan.moe/v3/anime/"+anime.getMal_id());
             AnimeDetailJson detailJson = gson.fromJson(json,AnimeDetailJson.class);
             anime.setScore(detailJson.getScore());
@@ -95,6 +92,8 @@ public class DataSave {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+            System.out.println(allAnime.indexOf(anime)+"已经抓取");
         }
     }
 

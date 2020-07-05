@@ -44,22 +44,16 @@
             <v-btn color="deep-purple lighten-2" text @click="reserve">Reserve</v-btn>
           </v-card-actions>
         </v-card>
+        <v-divider></v-divider>
 
-        <div>comment:</div>
-           
-        <v-timeline :align-top=true :dense=true  >
-          <v-timeline-item
-            v-for="n in 3"
-            :key="n"
-            right=true
-
-          >
-            <template v-slot:icon>
-              <v-avatar v-if="avatar">
-                <img src="http://i.pravatar.cc/64" />
-              </v-avatar>
-            </template>
-            <v-card class="elevation-2">
+        <v-textarea clearable clear-icon="cancel" label="comment:"></v-textarea>
+        <div  class="d-flex flex-row-reverse myDvider">
+           <v-btn color="primary">commit</v-btn>
+        </div>
+         
+        <v-timeline :align-top="true" :dense="true">
+          <v-timeline-item v-for="n in 3" :key="n" right="true" hide-dot="true">
+            <v-card class="elevation-2" max-height="100px">
               <v-card-title class="headline">Lorem ipsum</v-card-title>
               <v-card-text>Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.</v-card-text>
             </v-card>
@@ -99,11 +93,7 @@ export default {
 <style  scoped>
 
 
-.item1 {
-  flex-grow: 1;
-}
-
-.item2 {
-  flex-grow: 4;
+.myDvider{
+  margin-bottom: 20px;
 }
 </style>

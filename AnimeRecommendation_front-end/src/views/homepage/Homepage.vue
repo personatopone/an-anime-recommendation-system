@@ -44,7 +44,7 @@
     </v-app-bar>
 
     <v-main>
-      <v-container class="fill-height">
+      <v-container>
         <router-view></router-view>
       </v-container>
     </v-main>
@@ -74,4 +74,4 @@ export default {
   }
 };
 </script>
-s
+
