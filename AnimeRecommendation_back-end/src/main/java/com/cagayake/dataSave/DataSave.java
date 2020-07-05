@@ -66,7 +66,7 @@ public class DataSave {
     public void saveAnimeDetail(){
 
         List<Anime> allAnime = animeMapper.findALl();
-        for (Anime anime:allAnime.subList(387,7000) ){
+        for (Anime anime:allAnime.subList(6477,allAnime.size()) ){
             String json = RequestUtil.sendGet("https://api.jikan.moe/v3/anime/"+anime.getMal_id());
             AnimeDetailJson detailJson = gson.fromJson(json,AnimeDetailJson.class);
             anime.setScore(detailJson.getScore());
@@ -87,13 +87,13 @@ public class DataSave {
                 songMapper.saveSong(song);
             }
 
-            try {
-                Thread.sleep(4100);
+           try {
+                Thread.sleep(400);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
-            System.out.println(allAnime.indexOf(anime)+"已经抓取");
+            System.out.println(allAnime.indexOf(anime)+"已经抓取,还剩下："+(allAnime.size()-allAnime.indexOf(anime)));
         }
     }
 

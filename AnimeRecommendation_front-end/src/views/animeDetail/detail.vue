@@ -46,16 +46,17 @@
         </v-card>
         <v-divider></v-divider>
 
-        <v-textarea clearable clear-icon="cancel" label="comment:"></v-textarea>
-        <div  class="d-flex flex-row-reverse myDvider">
-           <v-btn color="primary">commit</v-btn>
+        <v-text-field label="name" placeholder="Placeholder" solo v-model="username"></v-text-field>
+        <v-textarea clearable clear-icon="cancel" label="comment:" v-model="comment_content"></v-textarea>
+        <div class="d-flex flex-row-reverse myDvider">
+          <v-btn color="primary" @click="saveComment">submit</v-btn>
         </div>
-         
+
         <v-timeline :align-top="true" :dense="true">
-          <v-timeline-item v-for="n in 3" :key="n" right="true" hide-dot="true">
+          <v-timeline-item v-for="(item,i) in comment" :key="i" right=true hide-dot=true>
             <v-card class="elevation-2" max-height="100px">
-              <v-card-title class="headline">Lorem ipsum</v-card-title>
-              <v-card-text>Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.</v-card-text>
+              <v-card-title class="headline">{{item.username}} time：{{item.time}}</v-card-title>
+              <v-card-text>{{item.comment}}</v-card-text>
             </v-card>
           </v-timeline-item>
         </v-timeline>
@@ -70,7 +71,10 @@ export default {
   data() {
     return {
       animeDetail: [],
-      loading: false
+      loading: false,
+      comment_content: "",
+      username: "",
+      comment: []
     };
   },
   methods: {
@@ -79,6 +83,20 @@ export default {
       request.getAnimeDetail(this.$store.state.anime_id, function(response) {
         _this.animeDetail = response.data;
       });
+    },
+    saveComment() {
+      var myDate = new Date();
+      request.saveComment(
+        this.username,
+        myDate.toString(),
+        this.comment_content,
+        this.$store.state.anime_id,
+        function(response) {
+          console.log(response);
+
+         
+        }
+      );
     }
   },
   mounted: function() {
@@ -86,14 +104,17 @@ export default {
     request.getAnimeDetail(this.$store.state.anime_id, function(response) {
       _this.animeDetail = response.data;
     });
+
+    request.getComment(this.$store.state.anime_id, function(response) {
+      _this.comment = response.data.data;
+      console(response);
+    });
   }
 };
 </script>
 
 <style  scoped>
-
-
-.myDvider{
+.myDvider {
   margin-bottom: 20px;
 }
 </style>
