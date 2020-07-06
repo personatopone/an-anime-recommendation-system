@@ -21,7 +21,7 @@ In the Intellij program, click File -> Setting. In the setting, click "Plugins",
 
 
 
-# -animeRecommendation_front-end
+# -AnimeRecommendation_front-end
 First, download Visual Studio Code
 https://code.visualstudio.com/
 And node.js
