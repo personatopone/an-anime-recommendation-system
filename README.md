@@ -31,6 +31,8 @@ Import "animeRecommendation_front-end" folder to Visual Studio Code
 
 Click Terminal -> New Terminal. Enter the following corresponding commands in the command box
 
+If you want to run the animation recommendation website successfully. Only input the first command(npm install) and the second command(npm run serve).
+
 ## Project setup
 ```
 npm install(only first need)
