@@ -1,4 +1,4 @@
-# -anime.sql
+# -anime.sql, comment.sql, genre.sql, song.sql
 User should install MySQL program on local machine
 https://www.youtube.com/watch?v=u96rVINbAUI
 Using “root” as username and “123456” as password. Other settings are installed according to the default settings.
@@ -6,7 +6,7 @@ Using “root” as username and “123456” as password. Other settings are in
 
 Also, user should install Navicat program.
 https://www.navicat.com/en/download/navicat-for-mysql
-Then create a connection. Use “root” as username and use “123456” as password. And user create a database named animedata in this connection. After that, right-click the "Table" , click "Execute SQL File" button, fill the anime.sql to the choosing box, and then click "start" to complete executing. Then you can check data via double-click anime table.
+Then create a connection. Use “root” as username and use “123456” as password. And user create a database named animedata in this connection. After that, right-click the "Table" , click "Execute SQL File" button, fill the one of the four files(anime.sql, comment.sql, genre.sql, song.sql) to the choosing box, and then click "start" to complete executing. Then you can check data via double-click anime table. Repeat this step until you have successfully imported all four files.
 
 
 
@@ -21,7 +21,7 @@ In the Intellij program, click File -> Setting. In the setting, click "Plugins",
 
 
 
-# animeRecommendation_front-end
+# -animeRecommendation_front-end
 First, download Visual Studio Code
 https://code.visualstudio.com/
 And node.js
