@@ -6,6 +6,7 @@
         <v-list-item
           v-for="(item, i) in animes"
           :key="i"
+          @click="routerTo('/detail',item.mal_id)"
         >
           <v-list-item-icon>
            <v-img contain :src=item.image_url height="100"></v-img>
@@ -28,6 +29,14 @@ import request from "../../api/request.js";
       item: 1,
       animes: [],
     }),
+
+    methods:{
+
+    routerTo(url,id) {
+      this.$router.push(url);
+        this.$store.commit("saveAnimeID",id);
+    }
+  },
     mounted:function(){
         var _this = this;
         request.getRanking(function(response){
