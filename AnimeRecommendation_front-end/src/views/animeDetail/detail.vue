@@ -49,6 +49,7 @@
         <v-text-field label="name" placeholder="name" solo v-model="username"></v-text-field>
         <v-textarea clearable clear-icon="cancel" label="comment:" v-model="comment_content"></v-textarea>
         <div class="d-flex flex-row-reverse myDvider">
+          <div id="editor"></div>
           <v-btn color="primary" @click="saveComment">submit</v-btn>
         </div>
 
@@ -77,6 +78,7 @@ export default {
       comment: [],
       op:[],
       ed:[]
+
     };
   },
   methods: {
@@ -118,13 +120,17 @@ export default {
         _this.ed = response.data.data.ed;
 
         console.log(response)
+
       });
 
     request.getComment(this.$store.state.anime_id, function(response) {
       _this.comment = response.data.data;
       console(response);
     });
+
   }
+
+
 };
 </script>
 

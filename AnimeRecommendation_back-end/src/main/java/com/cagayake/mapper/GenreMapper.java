@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository()
 public interface GenreMapper {
     void saveGenre(Genre genre);
+    void findAnimeIdByGenre(Genre genre);
+
 }
