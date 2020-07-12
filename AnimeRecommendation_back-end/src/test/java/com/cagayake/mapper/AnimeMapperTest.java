@@ -18,7 +18,7 @@ public class AnimeMapperTest {
         anime = new Anime();
         anime.setSeason_name("spring");
         anime.setSeason_year("2013");
-        anime.setMal_id(2);
+        anime.setMal_id(14);
         //Because it is an insertion test, if you want to repeat the test,
         //please modify the primary key or delete the record of the duplicate primary key in the database
         anime.setTitle("animeTest");
@@ -29,5 +29,8 @@ public class AnimeMapperTest {
         anime.setScore("0");
         mapper.updateAnime(anime);
         logger.info("anime mapper update function test passed");
+
+        mapper.findAnimeByTitle("Keroro Gunsou");
+        mapper.findAnimeByGenre("Horror");
     }
 }
