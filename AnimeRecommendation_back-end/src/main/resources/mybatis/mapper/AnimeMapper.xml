@@ -29,7 +29,7 @@
     </select>
 
     <select id="findAnimeByTitle" parameterType="string" resultType="anime">
-        select * from anime where anime.title = #{title}
+        select * from anime where anime.title LIKE  #{title}
     </select>
 
     <select id="findAnimeByGenre" parameterType="string" resultType="anime">

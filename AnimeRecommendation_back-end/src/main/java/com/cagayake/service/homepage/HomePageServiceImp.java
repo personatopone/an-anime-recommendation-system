@@ -41,7 +41,7 @@ public class HomePageServiceImp implements HomePageService {
         List<Anime> animeList;
         switch (searchType){
             case 0:
-                animeList= animeMapper.findAnimeByTitle(content);
+                animeList= animeMapper.findAnimeByTitle("%"+content+"%");
                 break;
             case 1:
                 animeList = animeMapper.findAnimeByGenre(content);
