@@ -15,4 +15,6 @@ public interface AnimeMapper {
     List<Anime> findALl();
     void updateAnime(Anime anime);
     List<Anime> findAnimeByClickCount();
+    List<Anime> findAnimeByTitle(String title);
+    List<Anime> findAnimeByGenre(String name);
 }

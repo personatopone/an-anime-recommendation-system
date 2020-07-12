@@ -71,7 +71,6 @@ export default {
     displayDetail(id){
       this.$store.commit("saveAnimeID",id);
       this.$router.push("/detail")
-      console.log(id)
     }
   },
   mounted: function() {

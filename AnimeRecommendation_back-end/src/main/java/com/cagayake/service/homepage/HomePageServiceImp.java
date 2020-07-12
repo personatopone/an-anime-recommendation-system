@@ -12,8 +12,10 @@ import java.util.List;
 @Service
 public class HomePageServiceImp implements HomePageService {
 
-
+    public static int TITLE = 0;
+    public static int GENRE =1;
     private AnimeMapper animeMapper;
+
 
 
     @Override
@@ -32,6 +34,22 @@ public class HomePageServiceImp implements HomePageService {
     @Override
     public List<Anime> RankingAnime() {
         return animeMapper.findAnimeByClickCount().subList(0,50);
+    }
+
+    @Override
+    public List<Anime> findAnime(int searchType, String content) {
+        List<Anime> animeList;
+        switch (searchType){
+            case 0:
+                animeList= animeMapper.findAnimeByTitle(content);
+                break;
+            case 1:
+                animeList = animeMapper.findAnimeByGenre(content);
+                break;
+            default:
+                animeList = null;
+        }
+        return animeList;
     }
 
     @Autowired

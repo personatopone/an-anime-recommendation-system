@@ -26,5 +26,10 @@ export default{
         axios.get(`http://127.0.0.1:8081/api/anime/ranking`).then(function(response){
             callback(response)
         })
+    },
+    search:function(type,content,callback){
+        axios.get(`http://127.0.0.1:8081/api/anime/search/${type}/${content}`).then(function(response){
+            callback(response)
+        })
     }
 }

@@ -27,4 +27,12 @@
     <select id="findAnimeByClickCount" resultType="anime">
         select * from anime order by anime.click_conut DESC ;
     </select>
+
+    <select id="findAnimeByTitle" parameterType="string" resultType="anime">
+        select * from anime where anime.title = #{title}
+    </select>
+
+    <select id="findAnimeByGenre" parameterType="string" resultType="anime">
+        select * from anime,genre where anime.mal_id = genre.mal_id and genre.name = #{name}
+    </select>
 </mapper>
