@@ -31,16 +31,34 @@
         <span class="title">Anime Recommendation</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
+    
       <v-row align="center" style="max-width: 650px">
-        <v-text-field
+      
+       <v-col cols="3">
+          <v-select
+          :items="items"
+          label="search type"
+          class="search"
+        ></v-select>
+      </v-col>
+
+      <v-col cols="9">
+   <v-text-field
+          v-on:keyup.enter="search"
           :append-icon-cb="() => {}"
-          placeholder="Search..."
+          placeholder="Press enter to search"
           single-line
           append-icon="mdi-magnify"
           color="white"
           hide-details
+          v-model="searchContent"
         ></v-text-field>
+      </v-col>
+     
+
+         
       </v-row>
+       
     </v-app-bar>
 
     <v-main>
@@ -57,13 +75,18 @@ export default {
     source: String
   },
   data: () => ({
-    drawer: true
+    drawer: true,
+    searchContent:"",
+    items:["Title","Genre"]
   }),
 
   methods:{
 
     routerTo(url) {
       this.$router.push(url);
+    },
+    search(){
+
     }
   },
   components:{
@@ -74,4 +97,12 @@ export default {
   }
 };
 </script>
+
+<style  scoped>
+
+.search{
+  position: relative;
+  top: 11px;
+}
+</style>
 

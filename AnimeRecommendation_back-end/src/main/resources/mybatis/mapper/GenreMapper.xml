@@ -6,4 +6,6 @@
     <insert id="saveGenre" parameterType="genre">
         insert into genre(mal_id,name) value (#{mal_id},#{name})
     </insert>
+
+
 </mapper>

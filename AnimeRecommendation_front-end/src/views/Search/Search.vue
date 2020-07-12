@@ -1,20 +1,5 @@
 <template>
   <v-app>
-    <v-row justify="center">
-      <v-col cols="2">
-        <v-select v-model="yearValue" :items="year" label="Year" solo></v-select>
-      </v-col>
-      <v-col cols="2">
-        <v-select v-model="seasonValue" :items="season" label="Season" solo></v-select>
-      </v-col>
-
-      <v-col cols="2">
-        <div class="my-2">
-          <v-btn small color="primary" @click="requestSeasonAnime">GO</v-btn>
-        </div>
-      </v-col>
-    </v-row>
-
     <v-row>
       <v-col md="auto" v-for="(item,i) in animeData " :key="i">
         <v-skeleton-loader

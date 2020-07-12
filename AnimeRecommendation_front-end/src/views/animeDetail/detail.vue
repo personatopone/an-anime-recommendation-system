@@ -7,14 +7,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-row align="center" style="max-width: 650px">
-        <v-text-field
-          :append-icon-cb="() => {}"
-          placeholder="Search..."
-          single-line
-          append-icon="mdi-magnify"
-          color="white"
-          hide-details
-        ></v-text-field>
+  
       </v-row>
     </v-app-bar>
 
