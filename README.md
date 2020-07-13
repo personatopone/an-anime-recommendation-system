@@ -1,4 +1,10 @@
-# -database
+# -How to Run
+You need to follow the steps below to run this system smoothly：
+1. Follow "Database" section to create a database, and import sql files from database folder.
+2. Follow "AnimeRecommendation_back-end" to complete IDEA's environment configuration. After that, run "AnimeRecommendationApplication.java" to run the webpage backend. The purpose of running the webpage backend is to complete the interaction between the webpage frontend and the database. So don't terminate IDEA from running or close IDEA, but minimize IDEA and start the next operation.
+3. Follow "AnimeRecommendation_front-end" to open this webpage. Then you can do whatever you like.
+
+# -Database
 User should install MySQL program on local machine
 https://www.youtube.com/watch?v=u96rVINbAUI
 Using “root” as username and “123456” as password. Other settings are installed according to the default settings.
@@ -22,10 +28,11 @@ In the Intellij program, click File -> Setting. In the setting, click "Plugins",
 
 
 # -AnimeRecommendation_front-end
-First, download Visual Studio Code
+First, download Visual Studio Code 
 https://code.visualstudio.com/
 And node.js
 https://nodejs.org/en/download/
+And install them two.
 
 Import "animeRecommendation_front-end" folder to Visual Studio Code
 
