@@ -56,6 +56,9 @@ When you enter this command, you can see this right output. Under this picture, 
 ![image](https://github.com/bsu-cs222-summer20-dll/an-anime-recommendation-system/blob/master/output1.png)
 
 
+If you want to exit this command and want to input other command, you can press "Ctrl + C" twice. Then you can input new command.
+
+
 ### Compiles and minifies for production
 ```
 npm run build
