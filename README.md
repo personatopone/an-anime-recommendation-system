@@ -38,6 +38,8 @@ Import "animeRecommendation_front-end" folder to Visual Studio Code
 
 Click Terminal -> New Terminal. Enter the following corresponding commands in the command box
 
+In order to open the webpage, you should first enter the "npm install" command and press Enter, and then enter the "npm run serve" command and press Enter. Then you can open the webpage. If you want to open the webpage later, because the npm environment is already installed, you only need to enter the "npm run serve" command.
+
 ### If you want to run the animation recommendation website successfully. Only input the first command(npm install) and the second command(npm run serve).
 
 ## Project setup
