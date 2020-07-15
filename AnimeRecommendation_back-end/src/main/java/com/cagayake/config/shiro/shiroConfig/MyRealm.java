@@ -51,7 +51,7 @@ public class MyRealm extends AuthorizingRealm {
         String username = JWTUtil.getUsername(token);
         if (username == null) {
             throw new AuthenticationException("token invalid");
-        }
+    }
         User userBean = userService.getUser(username);
         if (userBean == null) {
             throw new AuthenticationException("User didn't existed!");

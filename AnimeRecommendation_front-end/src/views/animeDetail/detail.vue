@@ -6,9 +6,7 @@
         <span class="title">Anime Recommendation</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-row align="center" style="max-width: 650px">
-  
-      </v-row>
+      <v-row align="center" style="max-width: 650px"></v-row>
     </v-app-bar>
 
     <v-main>
@@ -47,10 +45,39 @@
         </div>
 
         <v-timeline :align-top="true" :dense="true">
-          <v-timeline-item v-for="(item,i) in comment" :key="i" right=true hide-dot=true>
-            <v-card class="elevation-2" max-height="100px">
-              <v-card-title class="headline">{{item.username}} time：{{item.time}}</v-card-title>
-              <v-card-text>{{item.comment}}</v-card-text>
+          <v-timeline-item v-for="(item,i) in comment" :key="i" right="true" hide-dot="true" class="comment">
+
+            <v-card class="mx-auto" color="#CCCCCC" dark max-width="1800">
+              <v-card-title>
+                <span class="title font-weight-light" >time：{{item.time}}</span>
+              </v-card-title>
+
+              <v-card-text
+                class="headline font-weight-bold"
+              >{{item.comment}}</v-card-text>
+
+              <v-card-actions>
+                <v-list-item class="grow">
+                  <v-list-item-avatar color="grey darken-3">
+                    <v-img
+                      class="elevation-6"
+                      src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+                    ></v-img>
+                  </v-list-item-avatar>
+
+                  <v-list-item-content>
+                    <v-list-item-title>{{item.username}} </v-list-item-title>
+                  </v-list-item-content>
+
+                  <v-row align="center" justify="end">
+                    <v-icon class="mr-1">mdi-heart</v-icon>
+                    <span class="subheading mr-2">256</span>
+                    <span class="mr-1">·</span>
+                    <v-icon class="mr-1">mdi-share-variant</v-icon>
+                    <span class="subheading">45</span>
+                  </v-row>
+                </v-list-item>
+              </v-card-actions>
             </v-card>
           </v-timeline-item>
         </v-timeline>
@@ -69,17 +96,16 @@ export default {
       comment_content: "",
       username: "",
       comment: [],
-      op:[],
-      ed:[]
-
+      op: [],
+      ed: []
     };
   },
   methods: {
     reserve() {
       var _this = this;
-     
+
       request.getAnimeDetail(this.$store.state.anime_id, function(response) {
-        _this.animeDetail = response.data.data.anime; 
+        _this.animeDetail = response.data.data.anime;
         _this.op = response.data.data.op;
         _this.ed = response.data.data.ed;
       });
@@ -95,35 +121,30 @@ export default {
         function(response) {
           console.log(response);
           _this.comment.push({
-            "username": _this.username,
-            "time":myDate.toString() ,
-            "comment": _this.comment_content
-          })
-         
+            username: _this.username,
+            time: myDate.toString(),
+            comment: _this.comment_content
+          });
         }
       );
     }
   },
   mounted: function() {
     var _this = this;
-     
-      request.getAnimeDetail(this.$store.state.anime_id, function(response) {
-        _this.animeDetail = response.data.data.anime; 
-        _this.op = response.data.data.op;
-        _this.ed = response.data.data.ed;
 
-        console.log(response)
+    request.getAnimeDetail(this.$store.state.anime_id, function(response) {
+      _this.animeDetail = response.data.data.anime;
+      _this.op = response.data.data.op;
+      _this.ed = response.data.data.ed;
 
-      });
+      console.log(response);
+    });
 
     request.getComment(this.$store.state.anime_id, function(response) {
       _this.comment = response.data.data;
       console(response);
     });
-
   }
-
-
 };
 </script>
 
@@ -131,4 +152,5 @@ export default {
 .myDvider {
   margin-bottom: 20px;
 }
+
 </style>

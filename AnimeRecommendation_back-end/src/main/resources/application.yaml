@@ -28,7 +28,8 @@ spring:
         wall:
           enabled: true
         stat:
-          enabled: true
+          enabled:
+
       connectionProperties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
       web-stat-filter:
         enabled: true
