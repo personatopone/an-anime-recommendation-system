@@ -27,8 +27,8 @@
           <v-card-title>music</v-card-title>
 
           <v-card-text>
-            <div>opening themes:{{op[1]}}</div>
-            <div>ending themes:{{ed[1]}}</div>
+            <div>opening themes:{{op[1].name}}</div>
+            <div>ending themes:{{ed[1].name}}</div>
           </v-card-text>
 
           <v-card-actions>
