@@ -53,7 +53,7 @@ npm run serve
 ```
 
 When you enter this command, you can see this right output. Under this picture, You can click the URL behind the "local" to see the animation recommendation webpage.
-![image](https://github.com/bsu-cs222-summer20-dll/an-anime-recommendation-system/blob/master/output1.png)
+![image](https://github.com/bsu-cs222-summer20-dll/an-anime-recommendation-system/blob/master/InstructionPicture/picture3.png?raw=true)
 
 
 If you want to exit this command and want to input other command, you can press "Ctrl + C" twice. Then you can input new command.
