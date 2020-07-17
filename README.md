@@ -14,7 +14,9 @@ Also, user should install Navicat Premium program.
 https://www.navicat.com/en/download/navicat-premium
 Then create a connection. Use “root” as username and use “123456” as password. And user create a database named animedata in this connection. After that, right-click the "Table" , click "Execute SQL File" button, fill the one of the four files (anime.sql, comment.sql, genre.sql, song.sql. They are all in database folder) to the choosing box, and then click "start" to complete executing. Then you can check data via double-click anime table. Repeat this step until you have successfully imported all four files.
 
+This picture shows the final look of the database.
 
+![image](https://github.com/bsu-cs222-summer20-dll/an-anime-recommendation-system/blob/master/InstructionPicture/picture1.png?raw=true)
 
 # -AnimeRecommendation_back-end
 Use maven and SpringBoot
