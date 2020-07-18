@@ -27,13 +27,13 @@
           <v-card-title>music</v-card-title>
 
           <v-card-text>
-            <div>opening themes:{{op[1].name}}</div>
-            <div>ending themes:{{ed[1].name}}</div>
+            <div v-if="op.length!=0">opening themes:{{op[0].name}}</div>
+            <div v-else>
+              NO DATA
+            </div>
           </v-card-text>
 
-          <v-card-actions>
-            <v-btn color="deep-purple lighten-2" text @click="reserve">Reserve</v-btn>
-          </v-card-actions>
+       
         </v-card>
         <v-divider></v-divider>
 
