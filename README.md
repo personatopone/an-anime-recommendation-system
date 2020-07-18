@@ -10,11 +10,13 @@ https://www.youtube.com/watch?v=u96rVINbAUI
 Using “root” as username and “123456” as password. Other settings are installed according to the default settings.
 
 
-Also, user should install Navicat program.
-https://www.navicat.com/en/download/navicat-for-mysql
+Also, user should install Navicat Premium program.
+https://www.navicat.com/en/download/navicat-premium
 Then create a connection. Use “root” as username and use “123456” as password. And user create a database named animedata in this connection. After that, right-click the "Table" , click "Execute SQL File" button, fill the one of the four files (anime.sql, comment.sql, genre.sql, song.sql. They are all in database folder) to the choosing box, and then click "start" to complete executing. Then you can check data via double-click anime table. Repeat this step until you have successfully imported all four files.
 
+This picture shows the final look of the database.
 
+![image](https://github.com/bsu-cs222-summer20-dll/an-anime-recommendation-system/blob/master/InstructionPicture/picture1.png?raw=true)
 
 # -AnimeRecommendation_back-end
 Use maven and SpringBoot
@@ -25,6 +27,9 @@ Import "AnimeRecommendation_back-end" folder to Intellij IDEA
 There is a link https://projectlombok.org/setup/intellij to show you how we do it.
 In the Intellij program, click File -> Setting. In the setting, click "Plugins", find Lombok and install, then click apply. Then click the compiler in "Build, Execution, Deployment" in the setting, click "Annotation Processors" from compiler button. choose "Enable above annotation processing", then click apply and ok.
 
+This picture shows how IDEA runs successfully.
+
+![image](https://github.com/bsu-cs222-summer20-dll/an-anime-recommendation-system/blob/master/InstructionPicture/picture2.png?raw=true)
 
 
 # -AnimeRecommendation_front-end
@@ -53,7 +58,9 @@ npm run serve
 ```
 
 When you enter this command, you can see this right output. Under this picture, You can click the URL behind the "local" to see the animation recommendation webpage.
-![image](https://github.com/bsu-cs222-summer20-dll/an-anime-recommendation-system/blob/master/output1.png)
+
+
+![image](https://github.com/bsu-cs222-summer20-dll/an-anime-recommendation-system/blob/master/InstructionPicture/picture3.png?raw=true)
 
 
 If you want to exit this command and want to input other command, you can press "Ctrl + C" twice. Then you can input new command.
